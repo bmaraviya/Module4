@@ -1,0 +1,182 @@
+1. What is File function in python? What is keywords to create and write file.
+-> File functions are used to handle files, allowing you to create, read, write, and manage file operations.
+'x' (exclusive creation mode):
+    Creates a new file for writing.
+    If the file already exists, it raises a FileExistsError.
+
+'w' (write mode):
+    Opens the file for writing.
+    If the file does not exist, it creates a new file.
+    If the file exists, it overwrites the content.
+
+
+2. Explain Exception handling? What is an Error in Python?
+-> Exception handling allows you to manage errors during program execution, preventing crashes.
+
+Key Keywords:
+    try: Block where errors might occur.
+    except: Handles specific or general exceptions.
+    else: Runs if no exception occurs.
+    finally: Always runs, used for cleanup (e.g., closing files).
+
+Error in Python:
+    Syntax Errors: Mistakes in code structure that prevent execution (e.g., missing colon).
+    Exceptions: Errors during execution (e.g., ZeroDivisionError, ValueError). These can be caught and handled using exception handling.
+
+
+3. How many except statements can a try-except block have? Name Some built-in exception classes:
+-> A try-except block can have multiple except statements to handle different exceptions. There is no limit to how many except blocks you can include.
+
+Common Built-in Exception Classes:
+    1. ZeroDivisionError: Division by zero.
+    2. ValueError: Invalid value.
+    3. TypeError: Invalid type operation.
+    4. IndexError: List index out of range.
+    5. KeyError: Dictionary key not found.
+    6. FileNotFoundError: File not found.
+    7. AttributeError: Invalid attribute reference.
+    8. NameError: Variable name not found.
+
+
+4. When will the else part of try-except-else be executed?
+-> The else part of a try-except-else block is executed only if no exceptions occur in the try block.
+
+
+5. Can one block of except statements handle multiple exception?
+-> Yes, one except block can handle multiple exceptions by grouping them in parentheses.
+
+
+6. When is the finally block executed?
+-> The finally block is executed always, regardless of whether an exception occurs or not. It runs after the try, except, and else blocks. It is typically used for cleanup actions like closing files or releasing resources. 
+
+
+7. What happens when „1‟== 1 is executed?
+->When 1 == 1 is executed in Python, it returns True because both values are the same integer. However, when '1' == 1 (a string '1' and an integer 1) is executed, it returns False because they are of different types: one is a string, and the other is an integer.
+
+In Python, equality comparison between different data types like string and integer will always return False.
+
+
+8. How Do You Handle Exceptions With Try/Except/Finally In Python? Explain with coding snippets.
+-> try: Contains code that may raise exceptions.
+except: Handles specific exceptions if they occur.
+finally: Executes code that always runs, used for cleanup.
+
+Example:
+try:
+    num = int(input("Enter a number: "))
+    result = 10 / num
+    print("Result:", result)
+except ZeroDivisionError:
+    print("Cannot divide by zero.")
+except ValueError:
+    print("Invalid input.")
+finally:
+    print("Execution complete.")
+
+try: Runs code that might fail.
+except: Catches and handles specific exceptions.
+finally: Runs regardless of whether an exception occurred.
+
+
+9. What are oops concepts? Is multiple inheritance supported in Python
+->OOP Concepts:
+Classes: Blueprints for creating objects.
+Objects: Instances of classes.
+Inheritance: Mechanism to inherit attributes and methods from another class.
+Encapsulation: Bundling data and methods into a single unit.
+Polymorphism: Different classes can be treated through a common interface.
+Abstraction: Hiding complex implementation details.
+
+Multiple Inheritance:
+-> Yes, Python supports multiple inheritance, allowing a class to inherit from more than one parent class.
+
+
+10. How to Define a Class in Python? What Is Self? Give An Example Of A Python Class
+-> Defining a Class in Python:
+To define a class in Python, use the class keyword, followed by the class name and a colon. Inside the class, define methods and attributes.
+
+self Keyword:
+-> self is a reference to the instance of the class. It allows access to the instance’s attributes and methods from within the class’s methods.
+
+Example:
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print(f"{self.name} says woof!")
+
+# Create an instance
+my_dog = Dog("Buddy", 3)
+my_dog.bark()  # Output: Buddy says woof!
+
+
+11. Explain Inheritance in Python with an example? What is init? Or What Is A Constructor In Python?
+-> Inheritance allows a class (child class) to inherit attributes and methods from another class (parent class). This promotes code reuse and helps create a hierarchical class structure.
+
+Example:
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        print(f"{self.name} makes a sound")
+
+class Dog(Animal):
+    def bark(self):
+        print(f"{self.name} barks")
+
+my_dog = Dog("Buddy")
+my_dog.speak()  # Output: Buddy makes a sound
+my_dog.bark()   # Output: Buddy barks
+
+-> __init__ initializes instance attributes when a class instance is created.
+
+
+12. What is Instantiation in terms of OOP terminology?
+-> Instantiation in OOP is the process of creating an instance (object) of a class.
+
+Example:
+class Car:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+# Create an instance
+my_car = Car("Toyota", "Corolla")
+
+-> my_car is an instantiated object of the Car class.
+
+
+13. What is used to check whether an object o is an instance of class A?
+-> To check whether an object o is an instance of class A, use the isinstance() function in Python.
+
+Syntax:
+isinstance(o, A)
+
+Example:
+class A:
+    pass
+
+class B(A):
+    pass
+
+obj = B()
+
+print(isinstance(obj, A))  # Output: True
+print(isinstance(obj, B))  # Output: True
+print(isinstance(obj, object))  # Output: True
+
+
+14. What relationship is appropriate for Course and Faculty?
+-> One faculty member can teach multiple courses.
+Each course is taught by one faculty member.
+
+
+15. What relationship is appropriate for Student and Person?
+-> The relationship between Student and Person is typically "is-a":
+
+A Student is a type of Person.
+In this case, Student is a subclass (or derived class) of Person, meaning every Student is a Person but not every Person is a Student.
+
